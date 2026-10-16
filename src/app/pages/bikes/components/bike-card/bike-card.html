@@ -1,0 +1,22 @@
+<article class="card">
+  <div class="card__media">
+    <img [src]="bike().image" [alt]="bike().imageAlt" loading="lazy" />
+    <span class="card__tag">{{ categoryLabel() }}</span>
+  </div>
+
+  <div class="card__body">
+    <h3 class="card__title">{{ bike().name }}</h3>
+    <p class="card__description">{{ bike().description }}</p>
+
+    <a
+      class="card__cta"
+      [href]="whatsappHref()"
+      target="_blank"
+      rel="noopener noreferrer"
+      [attr.aria-label]="'Consultar por WhatsApp sobre ' + bike().name"
+    >
+      Consultar por WhatsApp
+      <app-icon name="arrow-right" [size]="18" [strokeWidth]="2.25" />
+    </a>
+  </div>
+</article>

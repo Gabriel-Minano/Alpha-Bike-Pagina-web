@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
+import { SITE } from '../../core/site.config';
+import { whatsappUrl } from '../../core/whatsapp';
 import { Icon, IconName } from '../../shared/icon/icon';
 
 interface FooterLink {
@@ -24,9 +26,9 @@ interface SocialLink {
 export class Footer {
   protected readonly year = new Date().getFullYear();
 
-  protected readonly address = 'Av. A Mz 190 Los Olivos - Lima - Perú';
-  protected readonly phone = '+51 912 543 818';
-  protected readonly phoneHref = 'tel:+51912543818';
+  protected readonly address = SITE.address;
+  protected readonly phone = SITE.phoneLabel;
+  protected readonly phoneHref = SITE.phoneHref;
 
   protected readonly products: readonly FooterLink[] = [
     { label: 'Bicicletas de Montaña', commands: ['/bicicletas', 'montana'] },
@@ -52,6 +54,6 @@ export class Footer {
     { label: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/' },
     { label: 'Facebook', icon: 'facebook', url: 'https://www.facebook.com/' },
     { label: 'Twitter', icon: 'twitter', url: 'https://twitter.com/' },
-    { label: 'WhatsApp', icon: 'message-circle', url: 'https://wa.me/51912543818' },
+    { label: 'WhatsApp', icon: 'message-circle', url: whatsappUrl() },
   ];
 }

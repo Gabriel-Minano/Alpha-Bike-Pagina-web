@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+import { whatsappUrl } from '../../core/whatsapp';
+
 @Component({
   selector: 'app-whatsapp-button',
   templateUrl: './whatsapp-button.html',
@@ -7,7 +9,5 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WhatsappButton {
-  // TODO: confirmar el número real (formato internacional, sin "+" ni espacios)
-  protected readonly href =
-    'https://wa.me/51912543818?text=' + encodeURIComponent('Hola, quisiera más información sobre Alpha Bike.');
+  protected readonly href = whatsappUrl('Hola, quisiera más información sobre Alpha Bike.');
 }
