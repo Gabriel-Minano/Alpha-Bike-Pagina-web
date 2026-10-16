@@ -1,0 +1,29 @@
+<article class="mv-card" [class.mv-card--teal]="theme() === 'teal'">
+  <header class="mv-card__header">
+    <span class="mv-card__badge">
+      <app-icon [name]="icon()" [size]="30" [strokeWidth]="2" />
+    </span>
+    <div>
+      <p class="mv-card__eyebrow">{{ eyebrow() }}</p>
+      <h3 class="mv-card__title">{{ title() }}</h3>
+    </div>
+  </header>
+
+  <div class="mv-card__body">
+    <span class="mv-card__rule" aria-hidden="true"></span>
+
+    <div class="mv-card__text">
+      @for (paragraph of paragraphs(); track paragraph) {
+        <p>{{ paragraph }}</p>
+      }
+    </div>
+
+    @if (tags().length) {
+      <ul class="mv-card__tags">
+        @for (tag of tags(); track tag) {
+          <li>{{ tag }}</li>
+        }
+      </ul>
+    }
+  </div>
+</article>

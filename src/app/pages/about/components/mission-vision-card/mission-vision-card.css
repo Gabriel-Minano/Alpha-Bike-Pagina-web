@@ -1,0 +1,96 @@
+:host {
+  display: block;
+}
+
+.mv-card {
+  /* Tema azul (misión) */
+  --card-bg: var(--color-blue);
+  --badge-bg: var(--color-teal);
+  --eyebrow: #5fc3d6;
+  --rule: var(--color-teal);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mv-card--teal {
+  --card-bg: var(--color-teal);
+  --badge-bg: var(--color-blue);
+  --eyebrow: #c4ecf4;
+  --rule: var(--color-blue);
+}
+
+.mv-card__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  min-height: 190px;
+  padding: 1.25rem 1.3rem 1.25rem;
+  background: var(--card-bg);
+  color: #fff;
+}
+
+.mv-card__badge {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--badge-bg);
+}
+
+.mv-card__eyebrow {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--eyebrow);
+}
+
+.mv-card__title {
+  margin: 0;
+  font-size: clamp(1.75rem, 2.4vw, 2.125rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.mv-card__body {
+  flex: 1;
+  padding: 2.25rem 1.9rem 2rem;
+  border-bottom: 1px solid #ececf0;
+}
+
+.mv-card__rule {
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin-bottom: 1.6rem;
+  background: var(--rule);
+}
+
+.mv-card__text p {
+  margin: 0;
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  color: #3f4e63;
+}
+
+.mv-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mv-card__tags li {
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: #e3f4f8;
+  font-size: 1rem;
+  color: var(--color-blue);
+}

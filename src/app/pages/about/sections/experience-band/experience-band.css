@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.band {
+  display: grid;
+  place-items: center;
+  min-height: 104px;
+  padding: 0.5rem 1rem;
+  background: var(--color-band);
+}
+
+.band__title {
+  margin: 0;
+  max-width: 14em;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.8vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  text-align: center;
+  color: var(--color-heading-navy);
+}

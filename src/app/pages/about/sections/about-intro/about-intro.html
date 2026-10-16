@@ -1,0 +1,16 @@
+<section class="intro" aria-label="Qué ofrecemos">
+  <app-carousel [items]="slides" label="Qué ofrecemos" arrows="circle" variant="single">
+    <ng-template let-slide>
+      <article class="slide">
+        <img class="slide__image" [src]="slide.image" [alt]="slide.alt" />
+
+        <div class="slide__text">
+          <h2 class="slide__title">{{ slide.title }}</h2>
+          @for (paragraph of slide.paragraphs; track paragraph) {
+            <p>{{ paragraph }}</p>
+          }
+        </div>
+      </article>
+    </ng-template>
+  </app-carousel>
+</section>

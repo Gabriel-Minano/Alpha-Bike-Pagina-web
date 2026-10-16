@@ -1,0 +1,21 @@
+<section class="mv" aria-label="Misión y visión">
+  <div class="mv__grid">
+    @for (item of items; track item.title) {
+      <div class="mv__col">
+        @if (item.heading) {
+          <h2 class="mv__heading">{{ item.heading }}</h2>
+        } @else {
+          <div class="mv__heading mv__heading--empty" aria-hidden="true"></div>
+        }
+
+        <app-mission-vision-card
+          [theme]="item.theme"
+          [icon]="item.icon"
+          [title]="item.title"
+          [paragraphs]="item.paragraphs"
+          [tags]="item.tags"
+        />
+      </div>
+    }
+  </div>
+</section>

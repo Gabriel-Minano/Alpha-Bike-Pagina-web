@@ -13,7 +13,11 @@ export type IconName =
   | 'instagram'
   | 'facebook'
   | 'twitter'
-  | 'message-circle';
+  | 'message-circle'
+  | 'clock'
+  | 'thumbs-up'
+  | 'eye'
+  | 'target';
 
 /** Iconos SVG en línea (estilo "lucide"), sin dependencias externas. Heredan el color con currentColor. */
 @Component({

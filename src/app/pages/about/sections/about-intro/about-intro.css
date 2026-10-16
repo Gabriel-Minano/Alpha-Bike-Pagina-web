@@ -1,0 +1,50 @@
+:host {
+  display: block;
+}
+
+.intro {
+  padding: 4rem 1rem 2.5rem;
+}
+
+.slide {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  align-items: center;
+}
+
+.slide__image {
+  width: 100%;
+  aspect-ratio: 647 / 335;
+  object-fit: cover;
+}
+
+.slide__text {
+  padding: 0 clamp(1rem, 3.5vw, 3rem);
+  text-align: center;
+}
+
+.slide__title {
+  margin: 0 0 2.25rem;
+  font-family: var(--font-quirky);
+  font-size: 1.375rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.slide__text p {
+  margin: 0 0 1.4rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.slide__text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+  .slide {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

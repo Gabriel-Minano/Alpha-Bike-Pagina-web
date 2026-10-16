@@ -15,11 +15,11 @@ import { Icon } from '../icon/icon';
  * Carrusel reutilizable con scroll-snap.
  *
  * Uso:
- *   <app-carousel [items]="lista" label="Mi carrusel" arrows="circle">
+ *   <app-carousel [items]="lista" label="Mi carrusel" arrows="circle" variant="multi">
  *     <ng-template let-item> ...contenido de cada slide... </ng-template>
  *   </app-carousel>
  *
- * - Se ven 3 slides en escritorio, 2 en tablet y 1 en móvil.
+ * - variant="multi": 3 slides en escritorio, 2 en tablet y 1 en móvil. variant="single": 1 slide siempre.
  * - Las flechas avanzan un slide y, al llegar al final, vuelven al inicio (y viceversa).
  */
 @Component({
@@ -33,6 +33,8 @@ export class Carousel<T> {
   readonly items = input.required<readonly T[]>();
   readonly label = input.required<string>();
   readonly arrows = input<'circle' | 'triangle'>('circle');
+  /** 'multi': 3 / 2 / 1 slides según el ancho. 'single': siempre 1 slide (ancho más amplio). */
+  readonly variant = input<'multi' | 'single'>('multi');
 
   protected readonly slideTemplate = contentChild.required(TemplateRef);
   private readonly track = viewChild.required<ElementRef<HTMLElement>>('track');

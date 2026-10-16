@@ -1,4 +1,4 @@
-<div class="carousel" role="region" aria-roledescription="carrusel" [attr.aria-label]="label()">
+<div class="carousel" [class.carousel--single]="variant() === 'single'" role="region" aria-roledescription="carrusel" [attr.aria-label]="label()">
   <button class="carousel__arrow" type="button" aria-label="Anterior" (click)="go(-1)">
     <app-icon
       [name]="arrows() === 'circle' ? 'arrow-left-circle' : 'triangle-left'"

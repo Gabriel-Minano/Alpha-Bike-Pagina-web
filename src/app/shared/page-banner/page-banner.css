@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: clamp(240px, 31vw, 455px);
+  padding: 0 clamp(1.25rem, 6.6vw, 7rem) clamp(0rem, 2vw, 2rem);
+  background: var(--color-navy);
+  overflow: hidden;
+}
+
+.banner__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+
+.banner__title {
+  position: relative;
+  margin: 0;
+  max-width: 14ch;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0, 20, 50, 0.35);
+}
+
+@media (min-width: 900px) {
+  .banner__title {
+    max-width: none;
+  }
+}

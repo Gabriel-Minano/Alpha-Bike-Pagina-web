@@ -1,0 +1,12 @@
+<section class="vp" aria-labelledby="vp-title">
+  <h2 id="vp-title" class="section-title">Propuesta de Valor</h2>
+
+  <ul class="vp__list">
+    @for (item of items; track item.text) {
+      <li class="vp__card">
+        <app-icon [name]="item.icon" [size]="44" />
+        <p>{{ item.text }}</p>
+      </li>
+    }
+  </ul>
+</section>
