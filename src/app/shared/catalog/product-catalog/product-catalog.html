@@ -1,0 +1,33 @@
+<section class="catalog" aria-labelledby="catalog-heading">
+  <h2 id="catalog-heading" class="sr-only">{{ heading() }}</h2>
+
+  <app-category-filter [options]="options()" [active]="active()" (selected)="select($event)" />
+
+  @if (query()) {
+    <p class="catalog__query">
+      Resultados para “{{ query() }}” ·
+      <a [routerLink]="basePath()" (click)="showAll()">Limpiar búsqueda</a>
+    </p>
+  }
+
+  <p class="sr-only" role="status" aria-live="polite">{{ filtered().length }} resultados</p>
+
+  @if (filtered().length) {
+    <ul class="catalog__grid">
+      @for (product of filtered(); track product.id) {
+        <li>
+          <app-product-card
+            [product]="product"
+            [categoryLabel]="labelFor(product)"
+            [inquiryKind]="inquiryKind()"
+          />
+        </li>
+      }
+    </ul>
+  } @else {
+    <div class="catalog__empty">
+      <p>No encontramos productos con esos criterios.</p>
+      <a class="btn btn--dark" [routerLink]="basePath()" (click)="showAll()">Ver todo el catálogo</a>
+    </div>
+  }
+</section>

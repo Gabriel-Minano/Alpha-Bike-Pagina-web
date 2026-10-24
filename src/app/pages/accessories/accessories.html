@@ -1,0 +1,16 @@
+<app-catalog-hero
+  eyebrow="Completa tu equipo"
+  heading="Accesorios para rodar mejor"
+  subtitle="Seguridad, rendimiento y comodidad para cada kilómetro."
+/>
+
+<app-product-catalog
+  heading="Catálogo de accesorios"
+  basePath="/accesorios"
+  allLabel="Todos"
+  inquiryKind="el accesorio"
+  [products]="accessories"
+  [categories]="categories"
+  [initialFilter]="initialFilter()"
+  [query]="searchText()"
+/>

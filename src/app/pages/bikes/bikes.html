@@ -1,2 +1,16 @@
-<app-bikes-hero />
-<app-bike-catalog [bikes]="bikes" [initialFilter]="initialFilter()" [query]="searchText()" />
+<app-catalog-hero
+  eyebrow="Elige tu próxima aventura"
+  heading="Bicicletas para cada forma de rodar"
+  subtitle="Modelos seleccionados y bicicletas a pedido en menos de 24 horas."
+/>
+
+<app-product-catalog
+  heading="Catálogo de bicicletas"
+  basePath="/bicicletas"
+  allLabel="Todas"
+  inquiryKind="la bicicleta"
+  [products]="bikes"
+  [categories]="categories"
+  [initialFilter]="initialFilter()"
+  [query]="searchText()"
+/>

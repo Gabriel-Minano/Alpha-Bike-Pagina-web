@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 
 const loadBikes = () => import('./pages/bikes/bikes').then((m) => m.Bikes);
 
+const loadAccessories = () => import('./pages/accessories/accessories').then((m) => m.Accessories);
+
 export const routes: Routes = [
   {
     path: '',
@@ -19,8 +21,11 @@ export const routes: Routes = [
   { path: 'bicicletas', title: 'Alpha Bike | Bicicletas', loadComponent: loadBikes },
   { path: 'bicicletas/:categoria', title: 'Alpha Bike | Bicicletas', loadComponent: loadBikes },
 
+  // Accesorios: /accesorios  ·  /accesorios/luces  ·  /accesorios?q=casco
+  { path: 'accesorios', title: 'Alpha Bike | Accesorios', loadComponent: loadAccessories },
+  { path: 'accesorios/:categoria', title: 'Alpha Bike | Accesorios', loadComponent: loadAccessories },
+
   // TODO: agregar aquí las demás páginas a medida que se desarrollen:
-  // { path: 'accesorios', loadComponent: () => ... },
   // { path: 'servicios',  loadComponent: () => ... },
   // { path: 'contacto',   loadComponent: () => ... },
 

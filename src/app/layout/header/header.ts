@@ -43,7 +43,9 @@ export class Header {
     const q = this.query().trim();
     if (!q) return;
     this.closeMenu();
-    this.router.navigate(['/bicicletas'], { queryParams: { q } });
+    // Busca en la sección actual (accesorios o bicicletas); por defecto, en bicicletas
+    const target = this.router.url.startsWith('/accesorios') ? '/accesorios' : '/bicicletas';
+    this.router.navigate([target], { queryParams: { q } });
   }
 
   protected toggleMenu(): void {

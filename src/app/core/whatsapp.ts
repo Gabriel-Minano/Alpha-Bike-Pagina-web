@@ -6,11 +6,15 @@ export function whatsappUrl(message?: string): string {
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
 
-/** Mensaje predeterminado cuando alguien consulta por una bicicleta. */
-export function bikeInquiryMessage(bikeName: string): string {
-  return `Hola, estoy interesado en la bicicleta ${bikeName}. ¿Podría brindarme más información?`;
+/**
+ * Mensaje predeterminado al consultar por un producto.
+ * Ej.: productInquiryMessage('Trail Alpha 29', 'la bicicleta')
+ *   → "Hola, estoy interesado en la bicicleta Trail Alpha 29. ¿Podría brindarme más información?"
+ */
+export function productInquiryMessage(name: string, kind = 'el producto'): string {
+  return `Hola, estoy interesado en ${kind} ${name}. ¿Podría brindarme más información?`;
 }
 
-export function bikeInquiryUrl(bikeName: string): string {
-  return whatsappUrl(bikeInquiryMessage(bikeName));
+export function productInquiryUrl(name: string, kind = 'el producto'): string {
+  return whatsappUrl(productInquiryMessage(name, kind));
 }
