@@ -18,7 +18,9 @@ export type IconName =
   | 'thumbs-up'
   | 'eye'
   | 'target'
-  | 'arrow-right';
+  | 'arrow-right'
+  | 'wrench'
+  | 'check';
 
 /** Iconos SVG en línea (estilo "lucide"), sin dependencias externas. Heredan el color con currentColor. */
 @Component({

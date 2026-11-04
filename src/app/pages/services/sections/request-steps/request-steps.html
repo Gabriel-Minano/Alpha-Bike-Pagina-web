@@ -1,0 +1,20 @@
+<aside class="steps" aria-labelledby="steps-title">
+  <div class="steps__intro">
+    <p class="steps__eyebrow">Simple y directo</p>
+    <h2 id="steps-title" class="steps__title">Cómo solicitar un servicio</h2>
+  </div>
+
+  <ol class="steps__list">
+    @for (step of steps; track step.number) {
+      <li class="step">
+        <span class="step__number" aria-hidden="true">{{ step.number }}</span>
+        <h3 class="step__title">{{ step.title }}</h3>
+        <p class="step__text">{{ step.text }}</p>
+      </li>
+    }
+  </ol>
+
+  <div class="steps__cta">
+    <a class="steps__button" [href]="whatsappHref" target="_blank" rel="noopener noreferrer">Consultar</a>
+  </div>
+</aside>

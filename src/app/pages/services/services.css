@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+/* Lista de servicios a la izquierda y pasos a la derecha (columna gris a toda la altura) */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 63.5fr) minmax(0, 36.5fr);
+}
+
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

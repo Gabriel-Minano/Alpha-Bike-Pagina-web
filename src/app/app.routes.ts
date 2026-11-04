@@ -4,6 +4,8 @@ const loadBikes = () => import('./pages/bikes/bikes').then((m) => m.Bikes);
 
 const loadAccessories = () => import('./pages/accessories/accessories').then((m) => m.Accessories);
 
+const loadServices = () => import('./pages/services/services').then((m) => m.Services);
+
 export const routes: Routes = [
   {
     path: '',
@@ -25,8 +27,11 @@ export const routes: Routes = [
   { path: 'accesorios', title: 'Alpha Bike | Accesorios', loadComponent: loadAccessories },
   { path: 'accesorios/:categoria', title: 'Alpha Bike | Accesorios', loadComponent: loadAccessories },
 
+  // Servicios: /servicios  ·  /servicios/reparaciones (abre con ese servicio destacado)
+  { path: 'servicios', title: 'Alpha Bike | Servicios', loadComponent: loadServices },
+  { path: 'servicios/:servicio', title: 'Alpha Bike | Servicios', loadComponent: loadServices },
+
   // TODO: agregar aquí las demás páginas a medida que se desarrollen:
-  // { path: 'servicios',  loadComponent: () => ... },
   // { path: 'contacto',   loadComponent: () => ... },
 
   // Mientras no existan, cualquier otra ruta vuelve al inicio.

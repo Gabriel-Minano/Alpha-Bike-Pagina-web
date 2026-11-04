@@ -1,0 +1,27 @@
+<article
+  class="card"
+  [class.is-active]="active()"
+  (mouseenter)="activated.emit()"
+  (focusin)="activated.emit()"
+  (click)="activated.emit()"
+>
+  <span class="card__number" aria-hidden="true">{{ number() }}</span>
+
+  <span class="card__icon">
+    <app-icon [name]="service().icon" [size]="30" [strokeWidth]="1.75" />
+  </span>
+
+  <h3 class="card__title">{{ service().name }}</h3>
+  <p class="card__description">{{ service().description }}</p>
+
+  <a
+    class="card__cta"
+    [href]="whatsappHref()"
+    target="_blank"
+    rel="noopener noreferrer"
+    [attr.aria-label]="'Consultar por WhatsApp sobre ' + service().name"
+  >
+    Consultar
+    <app-icon name="arrow-right" [size]="18" [strokeWidth]="2.25" />
+  </a>
+</article>

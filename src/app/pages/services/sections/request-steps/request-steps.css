@@ -1,0 +1,114 @@
+:host {
+  display: block;
+  background: var(--color-panel);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: var(--font-heading);
+}
+
+.steps__intro {
+  padding: 5.5rem 1.5rem 3.5rem;
+  text-align: center;
+}
+
+.steps__eyebrow {
+  margin: 0 0 1.4rem;
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-step-red);
+}
+
+.steps__title {
+  margin: 0;
+  font-size: clamp(2.25rem, 3.4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--color-heading-navy);
+}
+
+.steps__list {
+  margin: 0;
+  padding: 0 1.1rem;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.3rem 1.5rem 2.6rem;
+  border-bottom: 1px solid #e0e6ed;
+  text-align: center;
+}
+
+.step:last-child {
+  border-bottom: 0;
+}
+
+.step__number {
+  display: grid;
+  place-items: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--color-step-red);
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+}
+
+.step__title {
+  margin: 1rem 0 0.9rem;
+  font-size: clamp(1.5rem, 2vw, 1.9rem);
+  font-weight: 600;
+  color: var(--color-heading-navy);
+}
+
+.step__text {
+  max-width: 24em;
+  margin: 0;
+  font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.25;
+  color: #0b0b0b;
+}
+
+.steps__cta {
+  margin-top: auto;
+  padding: 1.75rem 2rem 3.25rem;
+  border-top: 1px solid #dfe5ec;
+  background: #f5f7fa;
+}
+
+.steps__button {
+  display: block;
+  width: min(100%, 325px);
+  margin-inline: auto;
+  padding: 0.75rem 1rem;
+  border: 1px solid #008748;
+  border-radius: 6px;
+  background: var(--color-whatsapp-green);
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  text-align: center;
+  color: #fff;
+  transition: background-color 0.15s ease;
+}
+
+.steps__button:hover {
+  background: #00803f;
+}
+
+@media (max-width: 1000px) {
+  .steps__intro {
+    padding-top: 4rem;
+  }
+}

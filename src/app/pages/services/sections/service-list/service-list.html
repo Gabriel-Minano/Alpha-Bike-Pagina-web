@@ -1,0 +1,17 @@
+<section class="list" aria-labelledby="services-title">
+  <h2 id="services-title" class="list__title">¡Nuestros Servicios!</h2>
+
+  <ul class="list__rows">
+    @for (service of services; track service.slug; let i = $index) {
+      <li class="row">
+        <app-service-card
+          [service]="service"
+          [position]="i + 1"
+          [active]="activeSlug() === service.slug"
+          (activated)="activeSlug.set(service.slug)"
+        />
+        <img class="row__photo" [src]="service.image" [alt]="service.imageAlt" loading="lazy" />
+      </li>
+    }
+  </ul>
+</section>
