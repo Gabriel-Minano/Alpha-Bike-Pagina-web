@@ -1,0 +1,23 @@
+<div class="item">
+  <span class="item__icon">
+    <app-icon [name]="icon()" [size]="28" [strokeWidth]="1.75" />
+  </span>
+
+  <div>
+    <p class="item__label">{{ label() }}</p>
+
+    @if (href(); as link) {
+      <a class="item__value" [href]="link">
+        @for (line of lines(); track line) {
+          <span>{{ line }}</span>
+        }
+      </a>
+    } @else {
+      <p class="item__value">
+        @for (line of lines(); track line) {
+          <span>{{ line }}</span>
+        }
+      </p>
+    }
+  </div>
+</div>

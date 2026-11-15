@@ -1,0 +1,18 @@
+<article class="review">
+  <div class="review__stars" role="img" [attr.aria-label]="review().rating + ' de 5 estrellas'">
+    @for (star of stars; track star) {
+      <app-icon [name]="star < review().rating ? 'star-fill' : 'star'" [size]="24" [strokeWidth]="1.5" />
+    }
+  </div>
+
+  <h3 class="review__title">{{ review().title }}</h3>
+  <p class="review__text">{{ review().text }}</p>
+
+  <footer class="review__author">
+    <app-avatar [name]="review().author" [src]="review().avatar" [size]="50" />
+    <div>
+      <p class="review__name">{{ review().author }}</p>
+      <time class="review__date" [attr.datetime]="review().date">{{ review().date | date: 'dd/MM/yyyy' }}</time>
+    </div>
+  </footer>
+</article>

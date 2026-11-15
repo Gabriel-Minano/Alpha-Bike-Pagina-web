@@ -6,6 +6,8 @@ const loadAccessories = () => import('./pages/accessories/accessories').then((m)
 
 const loadServices = () => import('./pages/services/services').then((m) => m.Services);
 
+const loadContact = () => import('./pages/contact/contact').then((m) => m.Contact);
+
 export const routes: Routes = [
   {
     path: '',
@@ -31,9 +33,8 @@ export const routes: Routes = [
   { path: 'servicios', title: 'Alpha Bike | Servicios', loadComponent: loadServices },
   { path: 'servicios/:servicio', title: 'Alpha Bike | Servicios', loadComponent: loadServices },
 
-  // TODO: agregar aquí las demás páginas a medida que se desarrollen:
-  // { path: 'contacto',   loadComponent: () => ... },
+  { path: 'contacto', title: 'Alpha Bike | Contacto', loadComponent: loadContact },
 
-  // Mientras no existan, cualquier otra ruta vuelve al inicio.
+  // Cualquier ruta desconocida vuelve al inicio.
   { path: '**', redirectTo: '' },
 ];

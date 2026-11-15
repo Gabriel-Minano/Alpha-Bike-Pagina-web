@@ -19,6 +19,19 @@
   --viewport-max: 1100px;
 }
 
+.carousel--free {
+  --gap: 2.6rem;
+  --slide-width: 403px;
+  --viewport-max: none;
+
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  column-gap: 0.75rem;
+}
+
+.carousel--free .carousel__slide {
+  flex: 0 0 min(var(--slide-width), 100%);
+}
+
 .carousel__viewport {
   min-width: 0;
 }
@@ -65,13 +78,17 @@
 }
 
 @media (max-width: 1100px) {
-  .carousel:not(.carousel--single) {
+  .carousel:not(.carousel--single):not(.carousel--free) {
     --per-view: 2;
     --gap: 1.5rem;
   }
 }
 
 @media (max-width: 700px) {
+  .carousel--free {
+    --slide-width: 100%;
+  }
+
   .carousel,
   .carousel--single {
     --per-view: 1;

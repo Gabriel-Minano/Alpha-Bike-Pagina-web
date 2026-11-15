@@ -20,7 +20,9 @@ export type IconName =
   | 'target'
   | 'arrow-right'
   | 'wrench'
-  | 'check';
+  | 'check'
+  | 'star'
+  | 'star-fill';
 
 /** Iconos SVG en línea (estilo "lucide"), sin dependencias externas. Heredan el color con currentColor. */
 @Component({

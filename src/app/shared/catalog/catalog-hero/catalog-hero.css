@@ -48,6 +48,7 @@
 }
 
 .hero__subtitle {
+  max-width: 39em;
   margin: 1.5rem 0 0;
   font-size: 0.9375rem;
   color: #c9d2de;

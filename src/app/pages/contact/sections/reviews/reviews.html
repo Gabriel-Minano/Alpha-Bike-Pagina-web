@@ -1,0 +1,35 @@
+<section class="reviews" aria-labelledby="reviews-title">
+  <div class="reviews__layout">
+    <div class="reviews__main">
+      <div class="reviews__head">
+        <h2 id="reviews-title" class="reviews__title">Reseñas</h2>
+
+        <div class="reviews__people" aria-hidden="true">
+          @for (person of reviewers; track person.id) {
+            <app-avatar [name]="person.author" [src]="person.avatar" [size]="50" />
+          }
+          @if (extraReviewers > 0) {
+            <span class="reviews__more">+{{ extraReviewers }}</span>
+          }
+        </div>
+      </div>
+
+      <ul class="reviews__list">
+        @for (review of visibleReviews; track review.id) {
+          <li><app-review-card [review]="review" /></li>
+        }
+      </ul>
+    </div>
+
+    <app-carousel [items]="gallery" label="Galería del taller" arrows="circle" variant="free">
+      <ng-template let-photo>
+        <figure class="photo">
+          <img class="photo__img" [src]="photo.image" [alt]="photo.alt" loading="lazy" />
+          <a class="btn btn--accent photo__more" [href]="moreUrl" target="_blank" rel="noopener noreferrer">
+            Ver más
+          </a>
+        </figure>
+      </ng-template>
+    </app-carousel>
+  </div>
+</section>

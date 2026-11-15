@@ -1,0 +1,25 @@
+<section class="visit" aria-labelledby="visit-title">
+  <h2 id="visit-title" class="visit__title">Ven a Conocernos</h2>
+
+  <div class="visit__layout">
+    <div class="visit__info">
+      <app-contact-item icon="map-pin" label="Dirección" [lines]="site.addressLines" />
+      <app-contact-item icon="phone" label="Teléfono y WhatsApp" [lines]="phoneLines" [href]="site.phoneHref" />
+      <app-contact-item icon="clock" label="Horario de atención" [lines]="site.hoursLines" />
+    </div>
+
+    <div class="visit__map">
+      <iframe
+        class="visit__frame"
+        title="Ubicación de Alpha Bike en Google Maps"
+        [src]="mapSrc"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+      <a class="visit__directions" [href]="site.mapsUrl" target="_blank" rel="noopener noreferrer">
+        Abrir en Google Maps
+      </a>
+    </div>
+  </div>
+</section>
